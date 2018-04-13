@@ -1,0 +1,2 @@
+#N canvas 582 300 450 300 10;
+#X obj 100 99 phaseorsynth;

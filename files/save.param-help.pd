@@ -1,0 +1,99 @@
+#N canvas 196 44 1077 323 10;
+#X obj 33 -223 cnv 15 1010 60 empty empty empty 20 12 0 14 -261682
+-66577 0;
+#X floatatom 38 -88 5 0 100 1 number_1 #0-number_1.r #0-number_1.s
+;
+#X obj 88 -188 bng 20 250 50 0 \$0-save.s \$0-save.r save 22 7 0 10
+-261234 -1 -1;
+#X obj 38 -188 bng 20 250 50 0 \$0-load.s \$0-load.r load 22 7 0 10
+-204786 -1 -1;
+#X floatatom 38 -68 5 0 100 1 number_2 #0-number_2.r #0-number_2.s
+;
+#X floatatom 38 -48 5 0 100 1 number_3 #0-number_3.r #0-number_3.s
+;
+#X obj 38 -218 cnv 15 1000 20 \$0-preset.name.s \$0-preset.name.r PRESET_FILE:no_preset_loaded
+5 10 0 10 -86853 -261682 0;
+#X obj 148 -88 hradio 15 1 0 8 \$0-selector.s \$0-selector.r selector
+0 -8 0 10 -262144 -1 -1 0;
+#X obj 148 -46 vsl 15 128 0 127 0 0 \$0-slider.s \$0-slider.r slider
+0 -9 0 10 -262144 -1 -1 0 1;
+#N canvas 296 153 921 552 presets 0;
+#X obj 8 -297 cnv 15 320 180 empty empty empty 20 12 0 14 -261234 -66577
+0;
+#X obj 8 -107 cnv 15 320 350 empty empty empty 20 12 0 14 -204786 -66577
+0;
+#X obj 18 123 textfile;
+#X obj 18 33 until;
+#X msg 18 203 \; \$1-\$2.r \$3 \;;
+#X obj 18 -97 r \$0-load.s;
+#X obj 18 163 list prepend \$0;
+#X obj 18 183 list trim;
+#X obj 18 -287 r \$0-save.s;
+#X obj 18 -77 openpanel;
+#X obj 18 60 s \$0-to.textfile;
+#X obj 18 -157 s \$0-to.textfile;
+#X obj 63 143 s \$0-stop.loop;
+#X obj 45 13 r \$0-stop.loop;
+#X obj 18 103 r \$0-to.textfile;
+#X msg 37 -37 read \$1 \, rewind;
+#X msg 148 -20 label \$1;
+#X obj 18 -57 t b s s;
+#X msg 52 -227 clear;
+#X obj 148 0 s \$0-preset.name.r;
+#X obj 18 -267 savepanel;
+#X msg 158 -230 write \$1;
+#X msg 18 -187 write \$1;
+#X obj 18 -247 t s b b s;
+#X obj 148 -80 loadbang;
+#X text 517 -198 SEND: \$0-<parameter_name>.s;
+#X text 517 -178 RECEIVE: \$0-<parameter_name>.r;
+#X obj 348 -287 save.param \$0 number_1;
+#X obj 148 -60 symbol no_preset_loaded;
+#X obj 148 -40 makefilename PRESET_FILE:%s;
+#X text 517 -288 In order for a parameter that is in the parent patch
+to be saved in the preset file \, here there needs to be a 'save.param'
+abstraction with the name of that parameter as the second argument
+(whilst the first argument is always \$0). The send and receive symbols
+for each parameter must be formated in this way:;
+#X obj 35 -207 s \$0-get.values;
+#X obj 348 -227 save.param \$0 selector;
+#X obj 348 -207 save.param \$0 slider;
+#X obj 348 -267 save.param \$0 number_2;
+#X obj 348 -247 save.param \$0 number_3;
+#X text 517 -148 With this method you still have to create a new 'save.param'
+abstraction for every parameter to be saved in the presets \, but at
+least there is no need to patch all the send and receives.;
+#X connect 2 0 6 0;
+#X connect 2 1 12 0;
+#X connect 3 0 10 0;
+#X connect 5 0 9 0;
+#X connect 6 0 7 0;
+#X connect 7 0 4 0;
+#X connect 8 0 20 0;
+#X connect 9 0 17 0;
+#X connect 13 0 3 1;
+#X connect 14 0 2 0;
+#X connect 15 0 10 0;
+#X connect 16 0 19 0;
+#X connect 17 0 3 0;
+#X connect 17 1 15 0;
+#X connect 17 2 29 0;
+#X connect 18 0 11 0;
+#X connect 20 0 23 0;
+#X connect 21 0 11 0;
+#X connect 22 0 11 0;
+#X connect 23 0 22 0;
+#X connect 23 1 31 0;
+#X connect 23 2 18 0;
+#X connect 23 3 21 0;
+#X connect 24 0 28 0;
+#X connect 28 0 29 0;
+#X connect 29 0 16 0;
+#X restore 148 -188 pd presets;
+#X text 414 -137 This is a rather simple way to store the values of
+specific parameters to a text file without any patching required. Each
+text file that will be saved represents one set of values for the parameters
+chosen to be stored (aka a preset). The idea is to copy the top part
+of this patch into the patch where there are the parameters you want
+to save \, and adjust the 'pd presets' subpatch (inside it is shown
+how to add the parameters whose values will be stored).;

@@ -1,0 +1,11 @@
+#N canvas 337 421 1460 596 10;
+#X obj 62 74 polysynthwt;
+#X obj 70 539 dac~;
+#X obj 64 3 notein;
+#X obj 64 25 pack;
+#X connect 0 0 1 0;
+#X connect 0 0 1 1;
+#X connect 2 0 3 0;
+#X connect 2 0 0 0;
+#X connect 2 1 3 1;
+#X connect 3 0 0 0;
