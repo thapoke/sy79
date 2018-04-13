@@ -1,0 +1,3 @@
+#N canvas 707 262 214 194 10;
+#X obj 89 -109 pack;
+#X obj 86 -75 sy77params;

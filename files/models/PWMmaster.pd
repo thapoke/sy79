@@ -1,0 +1,66 @@
+#N struct plot-help-array2-template float x float y;
+#N struct plot-help-template float x float y array array2 plot-help-array2-template
+;
+#N struct envelopedisplay-template float x float y array array2 plot-help-array2-template
+;
+#N struct structure_02 float x0 float y0 float x1 float y1 float x2
+float y2 float x3 float y3 float x4 float y4 float x5 float y5 float
+x6 float y6 float x7 float y7;
+#N struct structure_01 float x0 float y0 float x1 float y1 float x2
+float y2 float x3 float y3 float x4 float y4 float x5 float y5 float
+x6 float y6 float x7 float y7;
+#N canvas 639 152 1281 950 10;
+#X obj 28 -17 notein;
+#X obj 10 61 pack;
+#X floatatom 54 152 5 0 0 0 - - -, f 5;
+#X msg 255 -159 30 127;
+#X msg 357 -136 30 0;
+#X obj 61 935;
+#X obj 550 -178 tabread seq;
+#X msg 558 -143 127;
+#X obj 490 -170 t f b;
+#X obj 479 -225 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
+0 1;
+#X floatatom 61 935 5 0 0 0 - - -, f 5;
+#X obj 465 -123 makenote;
+#X obj 403 -94 pack;
+#X obj 545 -228 metro 300;
+#X obj 461 -148 + 36;
+#X floatatom 654 -222 5 0 0 0 - - -, f 5;
+#X msg 1149 -186 \; seq 0;
+#X obj 722 -175 table seq 16;
+#X msg 815 -129 \; seq 0 12 12 24 12 36 12 24 12 24 36 24 48 36 12
+36 24;
+#X msg 823 -190 \; seq 0 1 1 13 11 1 4 1 4 6 6 8 6 4 4 8 4;
+#X obj 550 -200 counter 15;
+#X obj 654 -167 f;
+#X floatatom 467 -37 5 0 0 0 - - -, f 5;
+#X obj 100 41 +;
+#X floatatom 132 10 5 0 0 0 - - -, f 5;
+#X obj 617 -86 s max;
+#X obj 575 -24 t b;
+#X obj 76 -59 PWMsynth;
+#X connect 0 0 23 0;
+#X connect 0 1 1 1;
+#X connect 1 0 27 0;
+#X connect 6 0 8 0;
+#X connect 7 0 11 1;
+#X connect 8 0 14 0;
+#X connect 8 1 7 0;
+#X connect 8 1 21 0;
+#X connect 9 0 13 0;
+#X connect 11 0 12 0;
+#X connect 11 1 12 1;
+#X connect 12 0 27 0;
+#X connect 13 0 20 0;
+#X connect 14 0 11 0;
+#X connect 15 0 13 1;
+#X connect 15 0 21 1;
+#X connect 20 0 6 0;
+#X connect 20 2 26 0;
+#X connect 21 0 11 2;
+#X connect 22 0 14 1;
+#X connect 23 0 1 0;
+#X connect 23 0 2 0;
+#X connect 24 0 23 1;
+#X connect 26 0 25 0;
