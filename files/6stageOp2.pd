@@ -1,0 +1,61 @@
+#N canvas 542 177 1166 685 10;
+#N canvas 0 22 450 300 (subpatch) 0;
+#X array \6stageOp2 17 float 23 #91fcbe black;
+#A 0 0.155563 0.0888942 0.8 0.0344816 0.170378 0.510342 0.644442 0.303445
+0.170377 0.413795 0.688885 0.434478 0.214821 0.462064 0.137932 0.413788
+0.413788;
+#X coords 0 1 17 0 442 145 1;
+#X restore 100 135 graph;
+#X text 102 138 init;
+#X text 133 140 T1;
+#X text 238 140 T3;
+#X text 291 140 T4;
+#X text 342 140 T5;
+#X text 391 140 T6;
+#X text 160 140 L1;
+#X text 212 140 L2;
+#X text 185 140 T2;
+#X text 316 140 L4;
+#X text 368 140 L5;
+#X text 418 140 L6;
+#X text 449 140 R;
+#X text 464 140 strt;
+#X text 496 140 end;
+#X text 520 140 vel;
+#X text 479 130 loop;
+#X obj 210 337 tabwrite \6stageOp2;
+#X floatatom 209 314 5 0 0 0 - - -, f 5;
+#X floatatom 335 324 5 0 0 0 - - -, f 5;
+#X obj 447 9 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 447 27 savepanel;
+#X msg 446 49 \; array99 write \$1;
+#X text 284 19 read a text file;
+#X msg 283 39 \; array99 read 15.file.txt;
+#X text 107 406 renaming an array:;
+#X text 106 463 setting the bounds rectangle:;
+#X text 105 517 adding x and y labels: give a point to put a tick \,
+the interval between ticks \, and the number of ticks overall per large
+tick.;
+#X text 101 595 adding labels. Give a y value and a bunch of x values
+or vice versa:;
+#X text 102 661 You can also change x and y range and size in the "properties"
+dialog. Note that information about size and ranges is saved \, but
+ticks \, labels \, and the actual data are lost between Pd sessions.
+;
+#X msg 414 322 \; \6stageOp2 0 -1 1 -1 1 -1 1 -1 1 -1;
+#X msg 107 426 \; \6stageOp2 rename george;
+#X msg 108 482 \; \6stageOp2 bounds 0 -2 10 2;
+#X msg 281 426 \; george rename \6stageOp2;
+#X msg 407 376 \; \6stageOp2 3 -0.5 0.5;
+#X msg 579 632 \; \6stageOp2 xlabel clear;
+#X msg 338 484 \; \6stageOp2 bounds 0 1 5 0;
+#X msg 350 626 \; \6stageOp2 ylabel clear;
+#X msg 112 559 \; \6stageOp2 xticks 1 2 1;
+#X text 265 140 L3;
+#X msg 298 557 \; \6stageOp2 yticks 0 0.05 1;
+#X connect 19 0 18 0;
+#X connect 20 0 18 1;
+#X connect 21 0 22 0;
+#X connect 22 0 23 0;
+#X coords 0 -1 1 1 442 180 1 100 100;

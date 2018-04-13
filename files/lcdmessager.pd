@@ -1,0 +1,10 @@
+#N canvas 2205 161 450 300 10;
+#X obj 231 103 shell;
+#X obj 215 162 print STOUT;
+#X msg 296 97 ls;
+#X msg 219 63 /wiringPi/examples;
+#X msg 103 34 ./wiringPi/examples/lcd 4 16 2 pdhello;
+#X connect 0 0 1 0;
+#X connect 2 0 0 0;
+#X connect 3 0 0 0;
+#X connect 4 0 0 0;

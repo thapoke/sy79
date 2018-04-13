@@ -1,0 +1,240 @@
+#N canvas 280 277 648 512 10;
+#X msg 2 210 0;
+#X obj 1 188 t b f;
+#X obj 4 302 pack;
+#X obj 29 234 t b f;
+#X obj 52 188 t b f;
+#X obj 80 234 t b f;
+#X obj 104 187 t b f;
+#X obj 132 233 t b f;
+#X obj 154 187 t b f;
+#X obj 182 233 t b f;
+#X obj 201 187 t b f;
+#X obj 229 233 t b f;
+#X obj 252 187 t b f;
+#X obj 280 233 t b f;
+#X obj 304 186 t b f;
+#X obj 332 232 t b f;
+#X obj 354 186 t b f;
+#X obj 382 232 t b f;
+#X obj 404 186 t b f;
+#X msg 30 256 1;
+#X msg 53 210 2;
+#X msg 81 256 3;
+#X msg 105 209 4;
+#X msg 133 255 5;
+#X msg 155 209 6;
+#X msg 183 256 7;
+#X msg 202 209 8;
+#X msg 230 255 9;
+#X msg 253 209 10;
+#X msg 281 255 11;
+#X msg 305 208 12;
+#X msg 333 254 13;
+#X msg 355 209 14;
+#X msg 383 254 15;
+#X msg 405 208 16;
+#X obj 203 314 unpack;
+#X floatatom 203 336 5 0 0 0 - - -, f 5;
+#X floatatom 261 325 5 0 0 0 - - -, f 5;
+#X obj 33 -59 r toOp1;
+#X obj 5 323 s fromOp1;
+#X obj 113 -44 route 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16;
+#X obj 1 18 vsl 20 155 0 1 0 0 6stage1Op0 6stage1Op0 0 0 0 0 4 -159724
+-1 -1 5400 1;
+#X obj 27 18 vsl 20 155 0 1 0 0 6stage1Op1 6stage1Op1 0 0 0 0 4 -159724
+-1 -1 0 1;
+#X obj 53 18 vsl 20 155 0 1 0 0 6stage1Op2 6stage1Op2 0 0 0 0 4 -159724
+-1 -1 0 1;
+#X obj 80 18 vsl 20 155 0 1 0 0 6stage1Op3 6stage1Op3 0 0 0 0 4 -159724
+-1 -1 0 1;
+#X obj 106 18 vsl 20 155 0 1 0 0 6stage1Op4 6stage1Op4 0 0 0 0 4 -159724
+-1 -1 0 1;
+#X obj 133 18 vsl 20 155 0 1 0 0 6stage1Op5 6stage1Op5 0 0 0 0 4 -159724
+-1 -1 0 1;
+#X obj 159 18 vsl 20 155 0 1 0 0 6stage1Op6 6stage1Op6 0 0 0 0 4 -159724
+-1 -1 0 1;
+#X obj 186 18 vsl 20 155 0 1 0 0 6stage1Op7 6stage1Op7 0 0 0 0 4 -159724
+-1 -1 0 1;
+#X obj 212 18 vsl 20 155 0 1 0 0 6stage1Op8 6stage1Op8 0 0 0 0 4 -159724
+-1 -1 3100 1;
+#X obj 239 18 vsl 20 155 0 1 0 0 6stage1Op9 6stage1Op9 0 0 0 0 4 -159724
+-1 -1 0 1;
+#X obj 265 18 vsl 20 155 0 1 0 0 6stage1Op10 6stage1Op10 0 0 0 0 4
+-159724 -1 -1 4000 1;
+#X obj 292 18 vsl 20 155 0 1 0 0 6stage1Op11 6stage1Op11 0 0 0 0 4
+-159724 -1 -1 2900 1;
+#X obj 318 18 vsl 20 155 0 1 0 0 6stage1Op12 6stage1Op12 0 0 0 0 4
+-159724 -1 -1 0 1;
+#X obj 345 18 vsl 20 155 0 1 0 0 6stage1Op13 6stage1Op13 0 0 0 0 4
+-159724 -1 -1 0 1;
+#X obj 371 18 vsl 20 155 0 1 0 0 6stage1Op14 6stage1Op14 0 0 0 0 4
+-159724 -1 -1 0 1;
+#X obj 398 18 vsl 20 155 0 1 0 0 6stage1Op15 6stage1Op15 0 0 0 0 4
+-159724 -1 -1 0 1;
+#X obj 424 18 vsl 20 155 0 1 0 0 6stage1Op16 6stage1Op16 0 0 0 0 4
+-159724 -1 -1 1800 1;
+#X text 0 30 init;
+#X text 30 30 T1;
+#X text 132 30 T3;
+#X text 183 30 T4;
+#X text 238 30 T5;
+#X text 294 29 T6;
+#X text 57 30 L1;
+#X text 106 30 L2;
+#X text 82 30 T2;
+#X text 211 30 L4;
+#X text 263 29 L5;
+#X text 317 29 L6;
+#X text 348 30 R;
+#X text 366 31 strt;
+#X text 397 28 end;
+#X text 421 28 vel;
+#X text 380 -1 loop;
+#X text 158 30 L3;
+#N canvas 555 184 1209 777.031 presets 0;
+#X obj 8 -297 cnv 15 320 180 empty empty empty 20 12 0 14 -261234 -66577
+0;
+#X obj 8 -107 cnv 15 320 350 empty empty empty 20 12 0 14 -204786 -66577
+0;
+#X obj 18 123 textfile;
+#X obj 18 33 until;
+#X msg 18 203 \; \$1-\$2.r \$3 \;;
+#X obj 18 -97 r \$0-load.s;
+#X obj 18 163 list prepend \$0;
+#X obj 18 183 list trim;
+#X obj 18 -287 r \$0-save.s;
+#X obj 18 -77 openpanel;
+#X obj 18 60 s \$0-to.textfile;
+#X obj 18 -157 s \$0-to.textfile;
+#X obj 63 143 s \$0-stop.loop;
+#X obj 45 13 r \$0-stop.loop;
+#X obj 18 103 r \$0-to.textfile;
+#X msg 37 -37 read \$1 \, rewind;
+#X msg 148 -20 label \$1;
+#X obj 18 -57 t b s s;
+#X msg 52 -227 clear;
+#X obj 148 0 s \$0-preset.name.r;
+#X obj 18 -267 savepanel;
+#X msg 158 -230 write \$1;
+#X msg 18 -187 write \$1;
+#X obj 18 -247 t s b b s;
+#X obj 148 -80 loadbang;
+#X text 517 -198 SEND: \$0-<parameter_name>.s;
+#X text 517 -178 RECEIVE: \$0-<parameter_name>.r;
+#X obj 148 -60 symbol no_preset_loaded;
+#X obj 148 -40 makefilename PRESET_FILE:%s;
+#X text 517 -288 In order for a parameter that is in the parent patch
+to be saved in the preset file \, here there needs to be a 'save.param'
+abstraction with the name of that parameter as the second argument
+(whilst the first argument is always \$0). The send and receive symbols
+for each parameter must be formated in this way:;
+#X obj 35 -207 s \$0-get.values;
+#X text 517 -148 With this method you still have to create a new 'save.param'
+abstraction for every parameter to be saved in the presets \, but at
+least there is no need to patch all the send and receives.;
+#X obj 348 -287 save.param \$0 6stage1Op0;
+#X obj 349 -267 save.param \$0 6stage1Op1;
+#X obj 348 -247 save.param \$0 6stage1Op2;
+#X obj 349 -227 save.param \$0 6stage1Op3;
+#X obj 347 -207 save.param \$0 6stage1Op4;
+#X obj 347 -187 save.param \$0 6stage1Op5;
+#X obj 347 -167 save.param \$0 6stage1Op6;
+#X obj 347 -147 save.param \$0 6stage1Op7;
+#X obj 347 -127 save.param \$0 6stage1Op8;
+#X obj 347 -107 save.param \$0 6stage1Op9;
+#X obj 347 -87 save.param \$0 6stage1Op10;
+#X obj 347 -67 save.param \$0 6stage1Op11;
+#X obj 346 -47 save.param \$0 6stage1Op12;
+#X obj 348 -26 save.param \$0 6stage1Op13;
+#X obj 346 -7 save.param \$0 6stage1Op14;
+#X obj 346 13 save.param \$0 6stage1Op15;
+#X obj 346 33 save.param \$0 6stage1Op16;
+#X connect 2 0 6 0;
+#X connect 2 1 12 0;
+#X connect 3 0 10 0;
+#X connect 5 0 9 0;
+#X connect 6 0 7 0;
+#X connect 7 0 4 0;
+#X connect 8 0 20 0;
+#X connect 9 0 17 0;
+#X connect 13 0 3 1;
+#X connect 14 0 2 0;
+#X connect 15 0 10 0;
+#X connect 16 0 19 0;
+#X connect 17 0 3 0;
+#X connect 17 1 15 0;
+#X connect 17 2 28 0;
+#X connect 18 0 11 0;
+#X connect 20 0 23 0;
+#X connect 21 0 11 0;
+#X connect 22 0 11 0;
+#X connect 23 0 22 0;
+#X connect 23 1 30 0;
+#X connect 23 2 18 0;
+#X connect 23 3 21 0;
+#X connect 24 0 27 0;
+#X connect 27 0 28 0;
+#X connect 28 0 16 0;
+#X restore 497 399 pd presets;
+#X obj 524 355 bng 20 250 50 0 \$0-save.s \$0-save.r save 22 7 0 10
+-261234 -1 -1;
+#X obj 474 355 bng 20 250 50 0 \$0-load.s \$0-load.r load 22 7 0 10
+-204786 -1 -1;
+#X connect 0 0 2 0;
+#X connect 1 0 0 0;
+#X connect 1 1 2 1;
+#X connect 2 0 35 0;
+#X connect 2 0 39 0;
+#X connect 3 0 19 0;
+#X connect 3 1 2 1;
+#X connect 4 0 20 0;
+#X connect 4 1 2 1;
+#X connect 5 0 21 0;
+#X connect 5 1 2 1;
+#X connect 6 0 22 0;
+#X connect 6 1 2 1;
+#X connect 7 0 23 0;
+#X connect 7 1 2 1;
+#X connect 8 0 24 0;
+#X connect 8 1 2 1;
+#X connect 9 0 25 0;
+#X connect 9 1 2 1;
+#X connect 10 0 26 0;
+#X connect 10 1 2 1;
+#X connect 11 0 27 0;
+#X connect 11 1 2 1;
+#X connect 12 0 28 0;
+#X connect 12 1 2 1;
+#X connect 13 0 29 0;
+#X connect 13 1 2 1;
+#X connect 14 0 30 0;
+#X connect 14 1 2 1;
+#X connect 15 0 31 0;
+#X connect 15 1 2 1;
+#X connect 16 0 32 0;
+#X connect 16 1 2 1;
+#X connect 17 0 33 0;
+#X connect 17 1 2 1;
+#X connect 18 0 34 0;
+#X connect 18 1 2 1;
+#X connect 19 0 2 0;
+#X connect 20 0 2 0;
+#X connect 21 0 2 0;
+#X connect 22 0 2 0;
+#X connect 23 0 2 0;
+#X connect 24 0 2 0;
+#X connect 25 0 2 0;
+#X connect 26 0 2 0;
+#X connect 27 0 2 0;
+#X connect 28 0 2 0;
+#X connect 29 0 2 0;
+#X connect 30 0 2 0;
+#X connect 31 0 2 0;
+#X connect 32 0 2 0;
+#X connect 33 0 2 0;
+#X connect 34 0 2 0;
+#X connect 35 0 36 0;
+#X connect 35 1 37 0;
+#X connect 38 0 40 0;
+#X coords 0 -1 1 1 450 180 2 0 0;

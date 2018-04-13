@@ -1,0 +1,11 @@
+#N canvas 383 207 582 413 10;
+#X obj 396 143 table \$2 20;
+#X text 213 -7 \$1 name \$2tablename \$3 \$0parent \$4 pagestart \$5
+pageend;
+#X obj 70 11 parameter rate 30 1 1 2000 \$2 1 \$3;
+#X obj 110 12 parameterradio wave 30 2 7 0 \$2 2 \$3;
+#X obj 146 11 parameter del 30 3 1 2000 \$2 3 \$3;
+#X obj 186 11 parameter pmod 30 4 0 2000 \$2 4 \$3;
+#X obj 226 11 parameter fmod 30 5 0 2000 \$2 5 \$3;
+#X obj 266 11 parameter amod 30 6 0 2000 \$2 6 \$3;
+#X coords 0 -1 1 1 237 203 1 69 10;
